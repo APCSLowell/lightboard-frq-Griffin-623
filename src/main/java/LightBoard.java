@@ -26,7 +26,20 @@ public class LightBoard
    */
   public boolean evaluateLight(int row, int col)
   {
-    /* to be implemented in part (b) */
+    count = 0;
+   for(int c = 0;c<lights.length;c++){
+      if(lights[row][col]==true){
+        count++;
+      }
+   }
+    if(lights[row][col]==true&&count%2==0){
+      return false;
+    }else if(lights[row][col]==false&&count%3==0){
+      return true;
+    }else{
+      return lights[row][col];
+    }
+    
    
  
   }
